@@ -9,16 +9,16 @@ import com.example.myapplication.motor.GameEngine;
 import com.example.myapplication.motor.GameObject;
 
 public class Jugador extends GameObject {
-    private int maxX;
-    private int maxY;
+    protected int maxX;
+    protected int maxY;
 
-    private double posicionX;
-    private double posicionY;
+    protected double posicionX;
+    protected double posicionY;
 
-    private double velocidad;
-    private double factorPixel;
+    protected double velocidad;
+    protected double factorPixel;
 
-    private TextView textView;
+    protected TextView textView;
 
     public Jugador(View view){
         factorPixel = view.getHeight() / 400;

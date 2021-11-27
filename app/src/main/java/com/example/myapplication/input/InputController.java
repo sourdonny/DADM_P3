@@ -1,10 +1,10 @@
 package com.example.myapplication.input;
 
 public class InputController {
-    private double horizontal;
-    private double vertical;
+    protected double horizontal;
+    protected double vertical;
 
-    private boolean estaDisparando;
+    protected boolean estaDisparando;
 
     public void OnStart() {
 

@@ -13,6 +13,7 @@ import android.widget.Button;
 import com.example.myapplication.input.InputController;
 import com.example.myapplication.motor.GameEngine;
 import com.example.myapplication.movimiento.Jugador;
+import com.example.myapplication.movimiento.Nave;
 
 public class Gameplay extends Fragment implements View.OnClickListener{
     private GameEngine gameEngine;
@@ -28,7 +29,7 @@ public class Gameplay extends Fragment implements View.OnClickListener{
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.btn_play_pause).setOnClickListener(this);
+        //view.findViewById(R.id.btn_play_pause).setOnClickListener(this);
 
         final ViewTreeObserver observer = view.getViewTreeObserver();
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -37,8 +38,7 @@ public class Gameplay extends Fragment implements View.OnClickListener{
                 observer.removeOnGlobalLayoutListener(this);
                 gameEngine = new GameEngine(getActivity());
                 gameEngine.setTheInputcontroller(new InputController());
-                //gameEngine.AddGameObject(new PuntuacionGameObject(view, R.id.txt_score));
-                gameEngine.AddGameObject(new Jugador(getView()));
+                gameEngine.AddGameObject(new Nave(getView()));
                 gameEngine.StartGame();
             }
         });
@@ -50,14 +50,14 @@ public class Gameplay extends Fragment implements View.OnClickListener{
     }
 
     public void playOrPause() {
-        Button button = (Button) getView().findViewById(R.id.btn_play_pause);
+        //Button button = (Button) getView().findViewById(R.id.btn_play_pause);
         if (gameEngine.IsPaused()) {
             gameEngine.ResumeGame();
-            button.setText("PAUSA");
+            //button.setText("PAUSA");
         }
         else {
             gameEngine.PauseGame();
-            button.setText("PLAY");
+            //button.setText("PLAY");
         }
     }
 }
