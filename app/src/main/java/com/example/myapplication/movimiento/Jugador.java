@@ -46,7 +46,7 @@ public class Jugador extends GameObject {
     }
 
     public void ActualizarPosicion(long millis, InputController inputController){
-        posicionX += velocidad * inputController.getHorizontal() * millis;
+        posicionX += velocidad * inputController.horizontal * millis;
         if(posicionX < 0){
             posicionX = 0;
         }
@@ -55,7 +55,7 @@ public class Jugador extends GameObject {
             posicionX = maxX;
         }
 
-        posicionY += velocidad * inputController.getVertical() * millis;
+        posicionY += velocidad * inputController.vertical * millis;
         if(posicionY < 0){
             posicionY = 0;
         }

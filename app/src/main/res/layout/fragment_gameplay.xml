@@ -13,4 +13,6 @@
         android:text="HELLO"
         android:textSize="34sp" />
 
+    <include layout="@layout/view_joystick"/>
+
 </FrameLayout>

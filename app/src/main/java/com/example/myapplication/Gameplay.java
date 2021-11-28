@@ -11,6 +11,7 @@ import android.view.ViewTreeObserver;
 import android.widget.Button;
 
 import com.example.myapplication.input.InputController;
+import com.example.myapplication.input.JoystickController;
 import com.example.myapplication.motor.GameEngine;
 import com.example.myapplication.movimiento.Jugador;
 import com.example.myapplication.movimiento.Nave;
@@ -37,7 +38,7 @@ public class Gameplay extends Fragment implements View.OnClickListener{
             public void onGlobalLayout() {
                 observer.removeOnGlobalLayoutListener(this);
                 gameEngine = new GameEngine(getActivity());
-                gameEngine.setTheInputcontroller(new InputController());
+                gameEngine.setTheInputcontroller(new JoystickController(getView()));
                 gameEngine.AddGameObject(new Nave(getView()));
                 gameEngine.StartGame();
             }
